@@ -7,6 +7,15 @@
     body {
       background: #fafafa;
     }
+
+    hm-histogram {
+      margin: 20px
+    }
+
+    hm-histogram#hh4 {
+      max-width: 100px;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -16,13 +25,14 @@
     import { html, render } from 'lit';
     import '../dist/src/components/hm-histogram/hm-histogram.js';
 
-    const header = 'Hello owc World!';
     render(
       html`
-        <div style="width: 400px;">
-        <hm-histogram>
-          some light-dom
-        </hm-histogram>
+        <div style="width: 400px; display: flex; flex-wrap: wrap; width: 100%;">
+          <hm-histogram id="hh1"></hm-histogram>
+          <hm-histogram id="hh2" height="10" items="[10, 8, 5, 10, 4, 1, 5, 8]"></hm-histogram>
+          <hm-histogram id="hh3" height="20" items="[20, 16, 10, 20, 4, 12, 5, 8]"></hm-histogram>
+          <hm-histogram id="hh4" height="30" items="[30, 26, 20, 10, 24, 12, 5, 26, 26, 20, 10, 24, 12, 5, 26]"></hm-histogram>
+          <hm-histogram id="hh3" height="120" items="[100, 80, 50, 100, 42, 12, 5, 80]"></hm-histogram>
         </div>
       `,
       document.querySelector('#demo')
